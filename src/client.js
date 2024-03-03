@@ -369,6 +369,44 @@ class RPCClient extends EventEmitter {
   }
 
   /**
+   * Gets soundboard sounds
+   * @returns {Promise}
+   */
+  getSoundboardSounds() {
+    return this.request(RPCCommands.GET_SOUNDBOARD_SOUNDS)
+    .then((s) => {
+      console.log(JSON.stringify(s));
+    })
+  }
+
+  /**
+   * Play a soundboard sound
+   * @param {string} name Name of the soundboard
+   * @param {string} sound_id ID of the sound
+   * @param {string} guild_id ID of the guild
+   * @returns {Promise}
+   */
+  playSoundboardSound(name, sound_id, gulid_id) {
+    return this.request(RPCCommands.PLAY_SOUNDBOARD_SOUND, {name, sound_id, guild_id});
+  }
+
+  /**
+   * Toggle the camera for user
+   * @returns {Promise}
+   */
+  toggleVideo() {
+    return this.request(RPCCommands.TOGGLE_VIDEO);
+  }
+
+  /**
+   * Toggle screenshare
+   * @returns {Promise}
+   */
+  toggleScreenshare() {
+    return this.request(RPCCommands.TOGGLE_SCREENSHARE);
+  }
+
+  /**
    * Move the user to a text channel
    * @param {Snowflake} id ID of the voice channel
    * @param {Object} [options] Options
