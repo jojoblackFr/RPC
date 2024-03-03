@@ -386,7 +386,7 @@ class RPCClient extends EventEmitter {
    * @param {string} guild_id ID of the guild
    * @returns {Promise}
    */
-  playSoundboardSound(name, sound_id, gulid_id) {
+  playSoundboardSound(name, sound_id, guild_id) {
     return this.request(RPCCommands.PLAY_SOUNDBOARD_SOUND, {name, sound_id, guild_id});
   }
 
