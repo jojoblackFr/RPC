@@ -373,10 +373,7 @@ class RPCClient extends EventEmitter {
    * @returns {Promise}
    */
   getSoundboardSounds() {
-    return this.request(RPCCommands.GET_SOUNDBOARD_SOUNDS)
-    .then((s) => {
-      console.log(JSON.stringify(s));
-    })
+    return this.request(RPCCommands.GET_SOUNDBOARD_SOUNDS);
   }
 
   /**
